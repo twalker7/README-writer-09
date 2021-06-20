@@ -1,17 +1,67 @@
  
-        # Title: DIY Paint N Sip
+# f
 
-        ## Description: 
-        
-        An app that produces artwork and drink ingredients at random for the user. The drink display works by receiving a user's input (the type of alcohol they desire to use) and fetching a random drink's name and ingredients, with instructions for putting it together. The other aspect of the app is simply a generator of random art images from the Metropolitan Museum in New York. If the user desires a new drink or artwork result, they can simply re-click the respective button to receive new content.
-        
-        ## Purpose:
-        The purpose of this app is to provide users with an entertainment tool that can be enjoyed by groups of people, especially during periods of isolation like the Covid-19 quarantine
+## Description 
 
-        ## Installation Instructions:
-         This application does not require any additional installation
+d
 
-        ## Contributions:
-        developers can contribute to this project by pushing new feature branches and bug reports to the repository. Make sure to provide descriptive commit messages describing what was modified
 
-    
+## Table of Contents (Optional)
+
+If your README is very long, add a table of contents to make it easy for users to find what they need.
+
+* [Installation](#installation)
+* [Usage](#usage)
+* [Credits](#credits)
+* [License](#license)
+
+
+## Installation
+
+s
+
+## Usage 
+
+Provide instructions and examples for use. Include screenshots as needed.
+
+To add a screenshot, create an   folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax:
+
+ 
+
+## Credits
+
+List your collaborators, if any, with links to their GitHub profiles.
+
+If you used any third-party assets that require attribution, list the creators with links to their primary web presence in this section.
+
+If you followed tutorials, include links to those here as well.
+
+
+## License
+
+ [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+---
+
+🏆 The sections listed above are the minimum for a good README, but your project will ultimately determine the content of this document. You might also want to consider adding the following sections.
+
+## Badges
+
+![badmath](https://img.shields.io/github/languages/top/nielsenjared/badmath)
+
+Badges aren't _necessary_, per se, but they demonstrate street cred. Badges let other developers know that you know what you're doing. Check out the badges hosted by [shields.io](https://shields.io/). You may not understand what they all represent now, but you will in time.
+
+
+## Features
+
+If your project has a lot of features, consider adding a heading called "Features" and listing them there.
+
+
+## Contributing
+
+If you created an application or package and would like other developers to contribute it, you will want to add guidelines for how to do so. The [Contributor Covenant](https://www.contributor-covenant.org/) is an industry standard, but you can always write your own.
+
+## Tests
+
+Go the extra mile and write tests for your application. Then provide examples on how to run them.
+
