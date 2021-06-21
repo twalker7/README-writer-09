@@ -203,7 +203,7 @@ https://drive.google.com/file/d/1jRy989kU2slt4czG0tDcKJ1iDuh-vYfG/view
 
 //mock data while developing to avoid repetive input -- 'appAnswers' parameter replaced with 'mockData'
 const mockData = {
-    authorName: "Thomas",
+    authorName: "Thomas Walker : https://github.com/twalker7",
     title: "DIY Paint N Sip",
     
     description: `An app that produces artwork and drink ingredients at random for the user. The drink display works by receiving a user's input (the type of alcohol they desire to use) and fetching a random drink's name and ingredients, 
