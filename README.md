@@ -1,14 +1,15 @@
  
-# f
+# DIY Paint N Sip
 
 ## Description 
 
-d
+An app that produces artwork and drink ingredients at random for the user. The drink display works by receiving a user's input (the type of alcohol they desire to use) and fetching a random drink's name and ingredients, 
+                with instructions for putting it together. The other aspect of the app is simply a generator of random art images from the Metropolitan Museum in New York. If the user desires a new drink or artwork result, they can simply re-click the respective button to receive new content.
+                The purpose of this app is to provide users with an entertainment tool that can be enjoyed by groups of people, especially during periods of physical isolation like the Covid-19 quarantine
+                
 
 
-## Table of Contents (Optional)
-
-If your README is very long, add a table of contents to make it easy for users to find what they need.
+## Table of Contents
 
 * [Installation](#installation)
 * [Usage](#usage)
@@ -18,50 +19,46 @@ If your README is very long, add a table of contents to make it easy for users t
 
 ## Installation
 
-s
+ Base technology used: CSS, HTML, Javascript. Additionally, you must install a CDN for each of the three API techonologies used: jQuery, Foundation, and Google Fonts.
 
 ## Usage 
 
-Provide instructions and examples for use. Include screenshots as needed.
+Drink generator: select a drink ingredient provided in the dropdown menu, then click the 'drink' button to produce a random result. The result will consist of a drink name, its ingredients, and instructions to put it together.
+        To retrieve a new artwork image, simply click the 'paint' button and in a few moments a new image will appear. 
+        * for example: I click the dropdown and select vodka, then push the 'drink' button. The app returns me the name of a drink, list of ingredients, and a list of instructions.
+        
+        
+![DIY Paint-N-Sip Screenshot](images/DIYPNS2.png)
 
-To add a screenshot, create an   folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax:
-
- 
 
 ## Credits
+Thomas 
 
-List your collaborators, if any, with links to their GitHub profiles.
-
-If you used any third-party assets that require attribution, list the creators with links to their primary web presence in this section.
-
-If you followed tutorials, include links to those here as well.
+Asher Bertraun https://github.com/abergtra, 
+             Newton Armstrong https://github.com/Narmstrongv
 
 
 ## License
 
- [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ---
-
-🏆 The sections listed above are the minimum for a good README, but your project will ultimately determine the content of this document. You might also want to consider adding the following sections.
-
-## Badges
-
-![badmath](https://img.shields.io/github/languages/top/nielsenjared/badmath)
-
-Badges aren't _necessary_, per se, but they demonstrate street cred. Badges let other developers know that you know what you're doing. Check out the badges hosted by [shields.io](https://shields.io/). You may not understand what they all represent now, but you will in time.
-
-
-## Features
-
-If your project has a lot of features, consider adding a heading called "Features" and listing them there.
 
 
 ## Contributing
 
-If you created an application or package and would like other developers to contribute it, you will want to add guidelines for how to do so. The [Contributor Covenant](https://www.contributor-covenant.org/) is an industry standard, but you can always write your own.
+Developers can contribute to this project by pushing new feature branches and bug reports to the repository. Please make sure to provide fairly descriptive commit messages describing what was modified!
+    additionally, we adhere to the industry standard Contributor Covenant found at this link: [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.0-4baaaa.svg)](code_of_conduct.md)
+    
+
 
 ## Tests
+ the basic test to run is to determine whether each button-click will produce new content. As out current MVP runs, it does respond to each button click with new drink information and artwork; however there is a slight buffer thay might cause problems for the user.
+            *
+        
 
-Go the extra mile and write tests for your application. Then provide examples on how to run them.
+## Questions 
+
+ Thomasnwalker@yahoo.com ; github.com/twalker7
+
 

@@ -6,20 +6,7 @@ const questions = [
     {
         type: 'input',
         name: 'authorName',
-        message: 'what is the name of the user?',
-        validate: input => {
-            if (input) {
-                return true;
-            } else {
-                console.log('a value must be entered here!');
-                return false;
-            }
-        }
-    },
-    {
-        type: 'input',
-        name: 'usage',
-        message: 'How should a user operate the application?',
+        message: 'Enter name and github link (Name : github)',
         validate: input => {
             if (input) {
                 return true;
@@ -45,20 +32,7 @@ const questions = [
     {
         type: 'input',
         name: 'description',
-        message: 'write a description for the project',
-        validate: input => {
-            if (input) {
-                return true;
-            } else {
-                console.log('a value must be entered here!');
-                return false;
-            }
-        }
-    },
-    {
-        type: 'input',
-        name: 'purpose',
-        message: 'What purpose does the project serve?',
+        message: 'write a description for the project (what it does and its purpose)',
         validate: input => {
             if (input) {
                 return true;
@@ -82,8 +56,26 @@ const questions = [
         }
     },
     {
+        type: 'input',
+        name: 'usage',
+        message: 'How should a user operate the application?',
+        validate: input => {
+            if (input) {
+                return true;
+            } else {
+                console.log('a value must be entered here!');
+                return false;
+            }
+        }
+    },
+    {
+        type: 'input',
+        name: 'imageLink',
+        message: 'please insert image link to display usage, or leave blank'
+    },
+    {
         type: 'type',
-        name: 'contributions',
+        name: 'contributing',
         message: 'tell other developers how they can contribute to the project repository',
         validate: input => {
             if (input) {
@@ -99,18 +91,56 @@ const questions = [
         name: 'license',
         message: 'Select a license type',
         choices: ['MIT','Mozilla','Apache','IBM']
-     }
+     },
+     {
+        type: 'input',
+        name: 'credits',
+        message: 'insert github links of contributors, if any (Name : <Githublink>)',
+        validate: input => {
+            if (input) {
+                return true;
+            } else {
+                console.log('a value must be entered here!');
+                return false;
+            }
+        }
+    },
+    {
+        type: 'input',
+        name: 'tests',
+        message: 'If any, what tests have you prepared for application functionality?',
+        
+    },
+    {
+        type: 'input',
+        name: 'contactQuestions',
+        message: 'insert email and github for developers to reach you, separated by semicolon (;) ',
+        validate: input => {
+            if (input) {
+                return true;
+            } else {
+                console.log('a value must be entered here!');
+                return false;
+            }
+        }
+    }
 ];
 
 
 // generatepage function containing the format of the README page with interpolated answersObject properties
 
 const generatePage = (answersObject) => {
-   let license = " "
+  
+  // conditional to define the type of license to load into the license variable
+    let license = " "
     if(answersObject.license === "MIT"){
         license = "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)";
     }else if(answersObject.license === "Mozilla"){
-        license = " [![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)";
+        license = "[![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)";
+    }else if(answersObject.license === "IBM"){
+        license = "[![License: IPL 1.0](https://img.shields.io/badge/License-IPL%201.0-blue.svg)](https://opensource.org/licenses/IPL-1.0)";
+    }else if(answersObject.license === "Apache"){
+        license = "[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)";
     }
     
     return ` 
@@ -121,9 +151,7 @@ const generatePage = (answersObject) => {
 ${answersObject.description}
 
 
-## Table of Contents (Optional)
-
-If your README is very long, add a table of contents to make it easy for users to find what they need.
+## Table of Contents
 
 * [Installation](#installation)
 * [Usage](#usage)
@@ -137,63 +165,76 @@ ${answersObject.installInstructions}
 
 ## Usage 
 
-Provide instructions and examples for use. Include screenshots as needed.
+${answersObject.usage}
+${answersObject.imageLink}
 
-To add a screenshot, create an   folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax:
-
- 
 
 ## Credits
+${answersObject.authorName} 
 
-List your collaborators, if any, with links to their GitHub profiles.
-
-If you used any third-party assets that require attribution, list the creators with links to their primary web presence in this section.
-
-If you followed tutorials, include links to those here as well.
+${answersObject.credits}
 
 
 ## License
 
- ${license}
+${license}
 
 ---
-
-🏆 The sections listed above are the minimum for a good README, but your project will ultimately determine the content of this document. You might also want to consider adding the following sections.
-
-## Badges
-
-![badmath](https://img.shields.io/github/languages/top/nielsenjared/badmath)
-
-Badges aren't _necessary_, per se, but they demonstrate street cred. Badges let other developers know that you know what you're doing. Check out the badges hosted by [shields.io](https://shields.io/). You may not understand what they all represent now, but you will in time.
-
-
-## Features
-
-If your project has a lot of features, consider adding a heading called "Features" and listing them there.
 
 
 ## Contributing
 
-If you created an application or package and would like other developers to contribute it, you will want to add guidelines for how to do so. The [Contributor Covenant](https://www.contributor-covenant.org/) is an industry standard, but you can always write your own.
+${answersObject.contributing}
+
 
 ## Tests
+${answersObject.tests}
 
-Go the extra mile and write tests for your application. Then provide examples on how to run them.
+## Questions 
+
+${answersObject.contactQuestions}
+
 
 `;
 }
 
-//mock data while developing to avoid repetive input -- appAnswers parameter replaced with mockData
+//mock data while developing to avoid repetive input -- 'appAnswers' parameter replaced with 'mockData'
 const mockData = {
-    authorName: "thomas",
+    authorName: "Thomas",
     title: "DIY Paint N Sip",
+    
     description: `An app that produces artwork and drink ingredients at random for the user. The drink display works by receiving a user's input (the type of alcohol they desire to use) and fetching a random drink's name and ingredients, 
-with instructions for putting it together. The other aspect of the app is simply a generator of random art images from the Metropolitan Museum in New York. If the user desires a new drink or artwork result, they can simply re-click the respective button to receive new content.
-technology used: 
-`,
-    purpose: "The purpose of this app is to provide users with an entertainment tool that can be enjoyed by groups of people, especially during periods of isolation like the Covid-19 quarantine",
-    installInstructions: " This application does not require any additional installation",
-    contributions: "developers can contribute to this project by pushing new feature branches and bug reports to the repository. Make sure to provide descriptive commit messages describing what was modified"
+                with instructions for putting it together. The other aspect of the app is simply a generator of random art images from the Metropolitan Museum in New York. If the user desires a new drink or artwork result, they can simply re-click the respective button to receive new content.
+                The purpose of this app is to provide users with an entertainment tool that can be enjoyed by groups of people, especially during periods of physical isolation like the Covid-19 quarantine
+                `,
+    
+    installInstructions: ` Base technology used: CSS, HTML, Javascript. Additionally, you must install a CDN for each of the three API techonologies used: jQuery, Foundation, and Google Fonts.`,
+
+    contributing: `Developers can contribute to this project by pushing new feature branches and bug reports to the repository. Please make sure to provide fairly descriptive commit messages describing what was modified!
+    additionally, we adhere to the industry standard Contributor Covenant found at this link: [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.0-4baaaa.svg)](code_of_conduct.md)
+    `,
+
+    usage: 
+        `Drink generator: select a drink ingredient provided in the dropdown menu, then click the 'drink' button to produce a random result. The result will consist of a drink name, its ingredients, and instructions to put it together.
+        To retrieve a new artwork image, simply click the 'paint' button and in a few moments a new image will appear. 
+        * for example: I click the dropdown and select vodka, then push the 'drink' button. The app returns me the name of a drink, list of ingredients, and a list of instructions.
+        
+        `,
+    
+    credits: 
+            `Asher Bertraun https://github.com/abergtra, 
+             Newton Armstrong https://github.com/Narmstrongv`,
+
+    tests: 
+        ` the basic test to run is to determine whether each button-click will produce new content. As out current MVP runs, it does respond to each button click with new drink information and artwork; however there is a slight buffer thay might cause problems for the user.
+            *
+        `,
+    license: "MIT",
+
+    imageLink : '![DIY Paint-N-Sip Screenshot](images/DIYPNS2.png)',
+
+    contactQuestions: ` Thomasnwalker@yahoo.com ; github.com/twalker7`
+    
 }
 
 
@@ -201,7 +242,7 @@ technology used:
 const promptQuestions = () => {
     inquirer.prompt(questions)
         .then(appAnswers => {
-            console.log(appAnswers.contributions);
+            console.log(appAnswers.contributing);
             // generatePage(appAnswers);
 
             fs.writeFile('README.md', generatePage(appAnswers), err => {
