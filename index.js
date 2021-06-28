@@ -123,7 +123,14 @@ const questions = [
                 return false;
             }
         }
+    },
+    {
+        type: 'input',
+        name: 'videoLink',
+        message: 'insert a presentation video url if you have one, otherwise omit this question',
+        
     }
+
 ];
 
 
@@ -196,7 +203,7 @@ ${answersObject.contactQuestions}
 
 ## Video Link
 
-https://drive.google.com/file/d/1jRy989kU2slt4czG0tDcKJ1iDuh-vYfG/view
+${answersObject.videoLink}
 
 `;
 }
@@ -204,6 +211,7 @@ https://drive.google.com/file/d/1jRy989kU2slt4czG0tDcKJ1iDuh-vYfG/view
 //mock data while developing to avoid repetive input -- 'appAnswers' parameter replaced with 'mockData'
 const mockData = {
     authorName: "Thomas Walker : https://github.com/twalker7",
+
     title: "DIY Paint N Sip",
     
     description: `An app that produces artwork and drink ingredients at random for the user. The drink display works by receiving a user's input (the type of alcohol they desire to use) and fetching a random drink's name and ingredients, 
@@ -214,7 +222,7 @@ const mockData = {
     installInstructions: ` Base technology used: CSS, HTML, Javascript. Additionally, you must install a CDN for each of the three API techonologies used: jQuery, Foundation, and Google Fonts.`,
 
     contributing: `Developers can contribute to this project by pushing new feature branches and bug reports to the repository. Please make sure to provide fairly descriptive commit messages describing what was modified!
-    additionally, we adhere to the industry standard Contributor Covenant found at this link: [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.0-4baaaa.svg)](code_of_conduct.md)
+    Additionally, we adhere to the industry standard Contributor Covenant found at this link: [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.0-4baaaa.svg)](code_of_conduct.md)
     `,
 
     usage: 
@@ -236,7 +244,10 @@ const mockData = {
 
     imageLink : '![DIY Paint-N-Sip Screenshot](images/DIYPNS2.png)',
 
-    contactQuestions: ` Thomasnwalker@yahoo.com ; github.com/twalker7`
+    contactQuestions: ` Thomasnwalker@yahoo.com ; github.com/twalker7`,
+
+    videoLink : 'https://drive.google.com/file/d/1jRy989kU2slt4czG0tDcKJ1iDuh-vYfG/view'
+
     
 }
 
